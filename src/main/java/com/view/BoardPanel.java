@@ -47,38 +47,7 @@ public class BoardPanel extends JPanel implements ISubscriber
         {
             for (int j = 0; j < sizeX; ++j)
             {
-                if (actualState[i][j] == Color.GRAY)
-                {
-                    board[i][j].setColor(Color.GRAY);
-                }
-                else if (actualState[i][j] == Color.RED)
-                {
-                    board[i][j].setColor(Color.RED);
-                }
-                else if (actualState[i][j] == Color.YELLOW)
-                {
-                    board[i][j].setColor(Color.YELLOW);
-                }
-                else if (actualState[i][j] == Color.GREEN)
-                {
-                    board[i][j].setColor(Color.GREEN);
-                }
-                else if (actualState[i][j] == Color.MAGENTA)
-                {
-                    board[i][j].setColor(Color.MAGENTA);
-                }
-                else if (actualState[i][j] == Color.CYAN)
-                {
-                    board[i][j].setColor(Color.CYAN);
-                }
-                else if (actualState[i][j] == Color.ORANGE)
-                {
-                    board[i][j].setColor(Color.ORANGE);
-                }
-                else if (actualState[i][j] == Color.BLUE)
-                {
-                    board[i][j].setColor(Color.BLUE);
-                }
+                board[i][j].setColor(actualState[i][j]);
             }
         }
         this.repaint();

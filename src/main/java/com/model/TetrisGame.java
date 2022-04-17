@@ -7,8 +7,7 @@ import com.model.board.Board;
 import com.model.high_score.HighScoreTable;
 import com.model.high_score.TableToken;
 import com.model.high_score.UserName;
-import com.model.shapes.HoldTetromino;
-import com.model.shapes.NextTetromino;
+import com.model.shapes.NotifierTetromino;
 import com.model.shapes.TetrominosEnum;
 import com.publisher.Publisher;
 
@@ -144,7 +143,7 @@ public class TetrisGame extends Publisher
     }
 
     //TETROMINO
-    public NextTetromino getNextShape() 
+    public NotifierTetromino getNextShape() 
     {
         return board.getNextTetromino();
     }
@@ -157,7 +156,7 @@ public class TetrisGame extends Publisher
         }
     }
 
-    public HoldTetromino getHoldShape() 
+    public NotifierTetromino getHoldShape() 
     {
         if (state.getState() == StateEnum.RUN)
         {

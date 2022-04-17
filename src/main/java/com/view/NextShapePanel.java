@@ -7,12 +7,12 @@ import java.awt.GridBagConstraints;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-import com.model.shapes.NextTetromino;
+import com.model.shapes.NotifierTetromino;
 import com.publisher.ISubscriber;
 
 public class NextShapePanel extends JPanel implements ISubscriber
 {
-    private NextTetromino tetromino;
+    private NotifierTetromino tetromino;
     private final int blocksX = 4;
     private final int blocksY = 4;
     private Color tetrominoColor;
@@ -58,7 +58,7 @@ public class NextShapePanel extends JPanel implements ISubscriber
         this.add(center, constraints);
     }
 
-    public void setNextTetromino(NextTetromino tetromino)
+    public void setNextTetromino(NotifierTetromino tetromino)
     {
         this.tetromino = tetromino;
         tetrominoColor = tetromino.getColor();

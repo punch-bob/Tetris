@@ -7,9 +7,8 @@ import java.awt.Point;
 import com.model.SideEnum;
 import com.model.factory.TetrominoFactory;
 import com.model.shapes.EmptyTetromino;
-import com.model.shapes.HoldTetromino;
+import com.model.shapes.NotifierTetromino;
 import com.model.shapes.IShapes;
-import com.model.shapes.NextTetromino;
 import com.model.shapes.TetrominosEnum;
 import com.publisher.Publisher;
 
@@ -22,9 +21,9 @@ public class Board extends Publisher
     private Color[][] board;
     private Color[][] tmpBoard;
     private IShapes tetromino;
-    private HoldTetromino holdTetromino;
+    private NotifierTetromino holdTetromino;
     private boolean isAlredyHeld = false;
-    private NextTetromino nextTetromino;
+    private NotifierTetromino nextTetromino;
     private boolean isGameOver;
 
     public Board(int width, int height)
@@ -37,9 +36,10 @@ public class Board extends Publisher
         {
             Arrays.fill(row, Color.GRAY);
         }
-        holdTetromino = new HoldTetromino();
+        holdTetromino = new NotifierTetromino();
         holdTetromino.setTetromino(new EmptyTetromino());
-        nextTetromino = new NextTetromino(TetrominosEnum.getRandomType());
+        nextTetromino = new NotifierTetromino();
+        nextTetromino.setTetromino(TetrominosEnum.getRandomType());
         isGameOver = false;
     }
 
@@ -123,7 +123,7 @@ public class Board extends Publisher
     }
 
     //HOLD TETROMINO
-    public HoldTetromino getHoldTetromino()
+    public NotifierTetromino getHoldTetromino()
     {
         return holdTetromino;
     }
@@ -155,7 +155,7 @@ public class Board extends Publisher
     }
 
     //NEXT TETROMINO
-    public NextTetromino getNextTetromino()
+    public NotifierTetromino getNextTetromino()
     {
         return nextTetromino;
     }
