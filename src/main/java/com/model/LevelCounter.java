@@ -18,7 +18,7 @@ public class LevelCounter extends Publisher
         if (score - lastLevelUpdateScore >= 100)
         {
             level++;
-            lastLevelUpdateScore = score;
+            lastLevelUpdateScore += 100;
         }
         publishNotify();
     }
