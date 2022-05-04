@@ -39,7 +39,6 @@ public class HighScoreDrawer extends JTable implements ISubscriber
         {
             TableToken token = highScoreList.get(i);
             this.setValueAt(row, row, 0);
-            //.out.println(token.getUserName());
             this.setValueAt(token.getUserName(), row, 1);
             this.setValueAt(token.getScore(), row, 2);
             row++;
